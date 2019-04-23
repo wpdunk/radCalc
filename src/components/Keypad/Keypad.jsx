@@ -7,7 +7,15 @@ const Keypad = ({
   operators,
   setOperator,
   updateDisplay
-}) => <div className="keypad-container" />;
+}) => {
+  const numberKeys = numbers.map(number => <p key={number}>{number}</p>);
+
+  return (
+    <div className="keypad-container">
+      <div className="numbers-container">{numberKeys}</div>
+    </div>
+  );
+};
 
 Keypad.propTypes = {
   callOperator: PropTypes.func.isRequired,
